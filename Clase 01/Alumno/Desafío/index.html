@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="tab icon" href="./favicon.png">
-  <title>Clase 01 - Desafío</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="tab icon" href="./favicon.png">
+	<title>Clase 01 - Desafío</title>
+	<link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
-
-
+	<main>
+		<header>
+			<h1>Workshop</h1>
+		</header>
+		<section>
+			<div class="listado">
+				<h2>Lista de alumnos</h2>
+			</div>
+			<div class="form">
+				<h2>Ingreso de datos</h2>
+				<form class="agregar" action="agregar-alumno.php" name="agregar-alumno" method="POST">
+					<input type="text" name="nombre" placeholder="Nombre">
+					<input type="text" name="apellido" placeholder="Apellido">
+					<input type="text" name="dni" placeholder="DNI">
+					<input type="email" name="email" placeholder="E-mail">
+					<input class="submit-add" type="submit" value="Agregar alumno">
+				</form>
+				<form class="del-search" action="del-alumno.php" name="del-alumno" method="POST">
+					<input type="text" name="dni" placeholder="DNI">
+					<input class="submit-del" type="submit" value="Eliminar alumno">
+				</form>
+				<form class="del-search" action="search-alumno.php" name="search-alumno" method="POST">
+					<input type="text" name="nombre" placeholder="Nombre">
+					<input class="submit-search" type="submit" value="Buscar alumno">
+				</form>
+			</div>
+		</section>
+	</main>
 </body>
 </html>
