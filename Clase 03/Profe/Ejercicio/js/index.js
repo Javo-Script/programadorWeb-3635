@@ -15,9 +15,11 @@ var daysOfTheWeek = [
 // Creo una variable para guardar el mensaje según el caso elegido por el usuario
 var message
 
+var day
+
 // Uso un ciclo for para recorrer el Array y evaluar cada día de la semana
 for (var i = 0; i < daysOfTheWeek.length; i++) {
-  var day = daysOfTheWeek[i]
+  day = daysOfTheWeek[i]
 
   // Comparo cada día del Array con todos los casos posibles
   switch (day) {
