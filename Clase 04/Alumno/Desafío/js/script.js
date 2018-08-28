@@ -51,5 +51,8 @@ function buscar(busqueda) {
 if (buscar(busqueda) === -1) {
 	console.log('No existe un alumno con ese nombre.');
 } else {
-	console.log('El alumno esta en al posicion ' + buscar(busqueda));
+	// console.log('El alumno esta en al posicion ' + buscar(busqueda));
+	console.log('Nombre: ' + studentsList[buscar(busqueda)].firstName);
+	console.log('Apellido: ' + studentsList[buscar(busqueda)].lastName);
+	console.log('Dni: ' + studentsList[buscar(busqueda)].dni);
 }
