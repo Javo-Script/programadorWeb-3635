@@ -46,6 +46,16 @@ if (result !== -1) {
   console.log('No encontré al usuario ' + text)
 }
 
+var text2 = 'Carlos'
+
+var result2 = searchStudentIndexByText(text2, studentsList)
+
+if (result2 !== -1) {
+  console.log('Encontré el usuario ' + text2 + ' en la posición ' + result2)
+} else {
+  console.log('No encontré al usuario ' + text2)
+}
+
 //  Otra resolución
 /*
 
