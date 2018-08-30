@@ -18,11 +18,11 @@
 var cars = [
   {
     model:'Suran',
-    brand: 'volkswagen',
+    brand: 'Volkswagen',
     year: 2015
   },
   {
-    model:`Audi TT`,
+    model:`TT`,
     brand:'Audi',
     year: 2017
   },
