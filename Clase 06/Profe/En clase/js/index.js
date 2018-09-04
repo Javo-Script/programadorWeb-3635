@@ -139,3 +139,16 @@
 // var colors = [ 'yellow', 'Ñandú', 'Red', 'blue', '1234' ]
 
 // console.log(colors.sort())
+
+function deleteElement (index, numbersArray) {
+  // Copiar el Array
+  // Eliminar el elemento
+  // Devolver el array
+}
+
+var numbers = [ 1, 2, 3, 4, 5 ]
+
+var result = deleteElement(2, numbers) // Devuelve un nuevo Array [1,2,4,5]
+
+console.log(numbers)
+console.log(result)
