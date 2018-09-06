@@ -113,3 +113,44 @@ console.log('Init app')
 // if (!userSettings.firstName) return 'No existe el nombre'
 
 // return 'Existe todo el usuario'
+
+function getLocalList (key) {
+  // Valido que reciba un string
+  if (typeof key === 'string') {
+    // Trato de recuperar la lista del localStorage
+    var localList = localStorage.getItem(key)
+    if (localList) {
+      // Si la lista existía la tranformo en JavaScript y la devuelvo
+      var parsedList = JSON.parse(localList)
+      return parsedList
+    } else {
+      // Sino existía devuelvo un array vacío
+      return []
+    }
+  }
+}
+
+function setLocalList (key, list) {
+  // Verifico los parámetros recibidos
+  if (typeof key === 'string' && Array.isArray(list)) {
+    // Convierto a JSON el array
+    var strList = JSON.stringify(list)
+    // Guardo en el localStorage pisando la key
+    localStorage.setItem(key, strList)
+  }
+}
+
+var savedList = getLocalList('list')
+
+var firstName = prompt('Ingresá tu nombre')
+
+var lastName = prompt('Ingresá tu apellido')
+
+var studentObj = {
+  firstName: firstName,
+  lastName: lastName
+}
+
+savedList.push(studentObj)
+
+setLocalList('list', savedList)
