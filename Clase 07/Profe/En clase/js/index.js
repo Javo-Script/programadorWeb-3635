@@ -67,33 +67,49 @@ console.log('Init app')
 
 // console.log('Estas logueado')
 
-var savedUserSetting = localStorage.getItem('userSettings')
+// var savedUserSetting = localStorage.getItem('userSettings')
 
-if (!savedUserSetting) {
-  var firstName = prompt('Ingresa tu nombre')
+// if (!savedUserSetting) {
+//   var firstName = prompt('Ingresa tu nombre')
 
-  var language = prompt('Ingresa tu idioma')
+//   var language = prompt('Ingresa tu idioma')
 
-  var userSettings = {
-    firstName: firstName,
-    language: language
-  }
+//   var userSettings = {
+//     firstName: firstName,
+//     language: language
+//   }
 
-  var stringifyUserSetting = JSON.stringify(userSettings)
+//   var stringifyUserSetting = JSON.stringify(userSettings)
 
-  localStorage.setItem('userSettings', stringifyUserSetting)
-} else {
-  var parsedUserSettings = JSON.parse(savedUserSetting)
+//   localStorage.setItem('userSettings', stringifyUserSetting)
+// } else {
+//   var parsedUserSettings = JSON.parse(savedUserSetting)
 
-  switch (parsedUserSettings.language) {
-    case 'ES':
-      console.log('Hola ' + parsedUserSettings.firstName)
-      break
-    case 'PT':
-      console.log('Oi ' + parsedUserSettings.firstName)
-      break
-    default:
-      console.log('Hello ' + parsedUserSettings.firstName)
-      break
-  }
-}
+//   switch (parsedUserSettings.language) {
+//     case 'ES':
+//       console.log('Hola ' + parsedUserSettings.firstName)
+//       break
+//     case 'PT':
+//       console.log('Oi ' + parsedUserSettings.firstName)
+//       break
+//     default:
+//       console.log('Hello ' + parsedUserSettings.firstName)
+//       break
+//   }
+// }
+
+// var userSettings = {
+//   firstName: firstName,
+//   language: language
+// }
+
+// if (!userSettings) {
+//   var pepe = 'Hola'
+//   return 'No existe el usuario'
+// }
+
+// if (!userSettings.language)
+
+// if (!userSettings.firstName) return 'No existe el nombre'
+
+// return 'Existe todo el usuario'
