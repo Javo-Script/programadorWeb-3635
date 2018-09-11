@@ -1,11 +1,25 @@
 // Datos iniciales
 
-var student = {
-  firstName: 'Juan',
+var students = [
+  {
+    firstName: 'Pedro',
 
-  dni: 22999333,
-  email: 'juan@gmail.com'
-}
+    dni: 22999333,
+    email: 'juan@gmail.com'
+  },
+  {
+    firstName: 'Ana',
+
+    dni: 22999333,
+    email: 'juan@gmail.com'
+  },
+  {
+    firstName: 'María',
+
+    dni: 22999333,
+    email: 'juan@gmail.com'
+  }
+]
 
 /**
  * createStudentNode es una función que devuelve un nodo li
@@ -26,18 +40,26 @@ function createStudentNode (newStudent) {
   // Le agrego el contenido al nodo
   liNode.innerHTML =
     '<h1>' +
-    newStudent.getFullName() +
-    '</h1><h3>DNI:' +
+    newStudent.firstName +
+    ' ' +
+    newStudent.lastName +
+    '</h1>' +
+    '<h3>DNI:' +
     newStudent.dni +
-    '</h3><p>E-mail:' +
+    '</h3><p class="pepe">E-mail:' +
     newStudent.email +
     '</p>'
 
   // Devuelvo solo el nodo con todos sus datos
   return liNode
 }
+var mainListNode = document.getElementById('mainList')
 
-// Creo un nodo para probar y le paso el objeto estudiante
-var studentNode = createStudentNode(student)
+var studentNode
 
-console.log(studentNode)
+for (var i = 0; i < students.length; i++) {
+  // Creo un nodo para probar y le paso el objeto estudiante
+  studentNode = createStudentNode(students[i])
+
+  mainListNode.appendChild(studentNode)
+}
