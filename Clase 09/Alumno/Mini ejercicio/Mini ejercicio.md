@@ -1,6 +1,6 @@
 # Mini ejericio
 
-- Usar el form que se encuentra jutno a este ejercicio y validar la edad ingresada por el usuario cuando aprieta el botón 'Validar edad' y mostrar un mensaje en consola cuando el usuario es mayor de edad y otro cuando es menor.
+- Usar el form que se encuentra junto a este ejercicio y validar la edad ingresada por el usuario cuando aprieta el botón 'Validar edad' y mostrar un mensaje en consola cuando el usuario es mayor de edad y otro cuando es menor.
 
 **Documentación:**
 

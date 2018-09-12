@@ -54,15 +54,15 @@ function Student(firstName, lastName, dni, email) {
 	};
 }
 
-var student1 = new Student(students[0].firstName, students[0].lastName, students[0].dni, students[0].email);
-var student2 = new Student(students[1].firstName, students[1].lastName, students[1].dni, students[1].email);
-var student3 = new Student(students[2].firstName, students[2].lastName, students[2].dni, students[2].email);
-var student4 = new Student(students[3].firstName, students[3].lastName, students[3].dni, students[3].email);
-var student5 = new Student(students[4].firstName, students[4].lastName, students[4].dni, students[4].email);
+var newStudents = [];
+var newStudent;
 
-console.log(student1.getFullName(), student1.dni, student1.email, student1.getId());
-console.log(student2.getFullName(), student2.dni, student2.email, student2.getId());
-console.log(student3.getFullName(), student3.dni, student3.email, student3.getId());
+for (var i = 0; i < students.length; i++) {
+	var stud = new Student(students[i].firstName, students[i].lastName, students[i].dni, students[i].email);
+	newStudent = stud.getFullName() + ' ' + students[i].dni + ' ' + students[i].email + ' ' + stud.getId();
+	newStudents.push(newStudent);
+}
 
-console.log(student4.getFullName(), student4.dni, student4.email, student4.getId());
-console.log(student5.getFullName(), student5.dni, student5.email, student5.getId());
+for (var i = 0; i < students.length; i++) {
+	console.log(newStudents[i]);
+}
