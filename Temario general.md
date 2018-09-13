@@ -88,7 +88,7 @@
 - 13.1 Más eventos de jQuery
 - 13.2 Más métodos de jQuery
 
-# 16 Efectos y animaciones con jQuery [Modulo C]
+# 14 Efectos y animaciones con jQuery [Modulo C]
 
 - 14.1 Efectos
 - 14.2 Animaciones
@@ -106,7 +106,6 @@
 - 16.3 Module Pattern
 - 16.4 Router de una SPA
 - 16.5 Método `load()` de jQuery y patrón MVC
-
 
 # 17 Workshop II
 
