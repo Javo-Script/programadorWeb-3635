@@ -23,15 +23,26 @@ function Car (model, brand, year) {
 
   this.model = model
   this.brand = brand
-  this.year = year
 
   this.getCarName = function () {
-    var textCarData = this.model + ', ' + this.brand + ', ' + this.year
+    var textCarData = this.model + ', ' + this.brand + ', ' + year
     return textCarData
+  }
+
+  this.setYear = function (newYear) {
+    year = newYear
   }
 }
 
 var car = new Car('Etios', 'Toyota', 1999)
+
+// console.log(car.model)
+// console.log(car.brand)
+// console.log(car.year)
+
+console.log(car.getCarName())
+
+car.setYear(2018)
 
 console.log(car.getCarName())
 
