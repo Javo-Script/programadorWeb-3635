@@ -58,6 +58,8 @@ function addStudent () {
   dniNode.classList.remove('is-valid')
 }
 
+// Funciones auxiliares
+
 function searchStudentIndexByDni (dni, studentsList) {
   var student
 
