@@ -1,8 +1,9 @@
-var nameNode = document.getElementById('email');
+var emailNode = document.getElementById('email');
+var buttonNode = document.getElementById('button');
 
-// nameNode.onclick = validateEmail;
-nameNode.onblur = validateEmail;
-// nameNode.oninput = validateEmail;
+// emailNode.onclick = validateEmail;
+emailNode.onblur = validateEmail;
+// emailNode.oninput = validateEmail;
 
 function validateEmail(event) {
 	var inputNode = event.target;
@@ -12,9 +13,15 @@ function validateEmail(event) {
 
 	if (regexEmail.test(value)) {
 		inputNode.classList.remove('is-invalid');
+		buttonNode.classList.remove('btn-secondary');
 		inputNode.classList.add('is-valid');
+		buttonNode.classList.add('btn-primary');
+		buttonNode.disabled = false;
 	} else {
-		inputNode.classList.remove('is-valid');
+		inputNode.classList.remove('is-invalid');
+		buttonNode.classList.remove('btn-primary');
 		inputNode.classList.add('is-invalid');
+		buttonNode.classList.add('btn-primary');
+		buttonNode.disabled = true;
 	}
 }

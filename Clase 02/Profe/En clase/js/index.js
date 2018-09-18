@@ -124,7 +124,7 @@
 //   console.log('Ingresalo de nuevo')
 // }
 
-var age = prompt('Ingresá tu edad')
+var age = prompt('Ingresá tu edad');
 
 // if (gameResult === 'Ganó') {
 //   console.log('Sumas tres puntos')
@@ -141,23 +141,23 @@ var age = prompt('Ingresá tu edad')
 // }
 
 if (age >= 18) {
-  var gameResult = prompt('Como salió el partido? Ganó, Perdió, Empató')
+	var gameResult = prompt('Como salió el partido? Ganó, Perdió, Empató');
 
-  switch (gameResult) {
-    case 'gano':
-    case 'ganó':
-    case 'Gano':
-    case 'Ganó':
-      console.log('Sumas tres puntos')
-      break
-    case 'Empató':
-      console.log('Sumas 1 punto')
-      break
-    case 'Perdió':
-      console.log('Sumas 0 puntos')
-      break
-    default:
-      console.log('Resultado incorrecto')
-      break
-  }
+	switch (gameResult) {
+		case 'gano':
+		case 'ganó':
+		case 'Gano':
+		case 'Ganó':
+			console.log('Sumas tres puntos');
+			break;
+		case 'Empató':
+			console.log('Sumas 1 punto');
+			break;
+		case 'Perdió':
+			console.log('Sumas 0 puntos');
+			break;
+		default:
+			console.log('Resultado incorrecto');
+			break;
+	}
 }
