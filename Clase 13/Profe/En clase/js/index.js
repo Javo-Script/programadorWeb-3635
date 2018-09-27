@@ -86,4 +86,40 @@ $(document).ready(function () {
   //     $('#card2').focus()
   //   }
   // })
+
+  // - 13.1 Responder a eventos del teclado
+  //  - `.keydown()`
+  //     - Enter: 13
+  //     - Up: 38
+  //     - Down: 40
+  //     - Right: 39
+  //     - Left: 37
+  //     - Esc: 27
+  //     - SpaceBar: 32
+  //     - Ctrl: 17
+  //     - Alt: 18
+  //     - Shift: 16
+  $('input').keydown(function (event) {
+    var inputNode = $(this)
+
+    switch (event.which) {
+      case 13:
+        event.preventDefault()
+        console.log('Voy a buscar', inputNode.val())
+        break
+      case 27:
+        inputNode.val('')
+        break
+      case 38:
+        var value = inputNode.val()
+        inputNode.val(value.toUpperCase())
+        break
+      case 40:
+        var value = inputNode.val()
+        inputNode.val(value.toLowerCase())
+        break
+      default:
+        break
+    }
+  })
 })
