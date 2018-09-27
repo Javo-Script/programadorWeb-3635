@@ -87,8 +87,16 @@ var divNode = $('div')
 
 divNode.click(toggleRed)
 
-function toggleRed () {
-  var divNode = $(this)
+var player = true
 
-  divNode.toggleClass('red')
+function toggleRed () {
+  // var divNode = $(this)
+  // divNode.toggleClass('red')
+  if (player) {
+    console.log('Cruz')
+    player = false
+  } else {
+    console.log('Círculo')
+    player = true
+  }
 }
