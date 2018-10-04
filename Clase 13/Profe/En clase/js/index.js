@@ -99,27 +99,49 @@ $(document).ready(function () {
   //     - Ctrl: 17
   //     - Alt: 18
   //     - Shift: 16
-  $('input').keydown(function (event) {
-    var inputNode = $(this)
+  // $('input').keydown(function (event) {
+  //   var inputNode = $(this)
+  //   var inputNode2 = $(event.target)
 
-    switch (event.which) {
-      case 13:
-        event.preventDefault()
-        console.log('Voy a buscar', inputNode.val())
-        break
-      case 27:
-        inputNode.val('')
-        break
-      case 38:
-        var value = inputNode.val()
-        inputNode.val(value.toUpperCase())
-        break
-      case 40:
-        var value = inputNode.val()
-        inputNode.val(value.toLowerCase())
-        break
-      default:
-        break
-    }
+  //   console.log(inputNode, inputNode2)
+
+  //   switch (event.which) {
+  //     case 13:
+  //       event.preventDefault()
+  //       console.log('Voy a buscar', inputNode.val())
+  //       break
+  //     case 27:
+  //       inputNode.val('')
+  //       break
+  //     case 38:
+  //       var value = inputNode.val()
+  //       inputNode.val(value.toUpperCase())
+  //       break
+  //     case 40:
+  //       var value = inputNode.val()
+  //       inputNode.val(value.toLowerCase())
+  //       break
+  //     default:
+  //       break
+  //   }
+  // })
+
+  // $('#red').click(function (event) {
+  //   var divNode1 = $(this)
+  //   var divNode2 = $(event.target)
+  //   console.log('Click sobre RED', divNode1, divNode2)
+  // })
+
+  // $('#blue').click(function (event) {
+  //   event.stopPropagation()
+  //   console.log('Click sobre BLUE')
+  // })
+
+  // $('#red').click(function (event) {
+  //   console.log('Click sobre RED')
+  // })
+
+  $(window).keydown(function (event) {
+    console.log('Apretó tecla')
   })
 })
