@@ -1,3 +1,5 @@
+LOCAL_KEY = 'studentList';
+
 var studentsList = getLocalList(LOCAL_KEY);
 
 // FUNCION QUE TRAE UNA LOCAL LIST
@@ -12,3 +14,5 @@ function getLocalList(key) {
 		}
 	}
 }
+
+console.log(studentsList);
