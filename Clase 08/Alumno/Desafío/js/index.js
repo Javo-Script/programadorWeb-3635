@@ -1,49 +1,47 @@
-var student = {
+var newStudent = {
 	firstName: 'Juan',
 	lastName: 'Pérez',
 	dni: 45678987,
 	email: 'juan@gmail.com'
 };
 
-function Student(firstName, lastName, dni, email) {
-	var id = dni;
+function createStudentNode(newStudent) {
+	var liNode = document.createElement('li');
 
-	this.firstName = firstName;
-	this.lastName = lastName;
-	this.dni = dni;
-	this.email = email;
+	liNode.id = newStudent.dni;
+	liNode.className = 'list-group-item';
 
-	this.getId = function() {
-		return id;
-	};
+	liNode.innerHTML =
+		'<h1>' +
+		newStudent.firstName +
+		' ' +
+		newStudent.lastName +
+		'</h1>' +
+		'<h3>DNI:' +
+		newStudent.dni +
+		'</h3><p class="pepe">E-mail:' +
+		newStudent.email +
+		'</p>';
+
+	return liNode;
 }
 
-var mainList = document.getElementById('mainList');
+// function Student(firstName, lastName, dni, email) {
+// 	var id = dni;
 
-var studentLi = document.createElement('li');
-studentLi.innerHTML = '<h1>Juan Peréz</h1>
-<h3>
-DNI: 22999333
-</h3><p>
-E-mail: juan@gmail.com
-</p>'student;
-studentLi.className = 'list-group-item';
+// 	this.fullName = firstName + ' ' + lastName;
+// 	this.dni = dni;
+// 	this.email = email;
 
-mainList.appendChild(studentLi);
-
-// for (var i = 0; i < studentList.length; i++) {
-//   student = studentList[i]
-//   newStudent = new Student(
-//     student.firstName,
-//     student.lastName,
-//     student.dni,
-//     student.email
-//   )
-//   console.log(newStudent.getId(), newStudent.getFullName())
+// 	this.getId = function() {
+// 		return id;
+// 	};
 // }
 
-// 	newStudent.innerHTML = studentList[i];
-// 	newStudent.className = 'list-group-item';
+// var mainList = document.getElementById('mainList');
 
-// 	mainList.appendChild(textLi);
-// }
+// var studentLi = document.createElement('li');
+// studentLi.innerHTML = '<h1>' + fullName + '</h1><h3>DNI: ' + dni + '</h3><p>E-mail: ' + email + '</p>';
+// studentLi.className = 'list-group-item';
+
+// mainList.appendChild(studentLi);
