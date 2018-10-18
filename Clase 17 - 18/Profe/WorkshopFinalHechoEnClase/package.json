@@ -1,0 +1,26 @@
+{
+  "name": "workshopfinal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "http-server",
+    "start": "webpack --mode=development & npm run server",
+    "build": "webpack --mode=production"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.1.2",
+    "crossroads": "^0.12.2",
+    "jquery": "^3.3.1",
+    "npm": "^6.4.1",
+    "popper.js": "^1.14.4"
+  },
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
