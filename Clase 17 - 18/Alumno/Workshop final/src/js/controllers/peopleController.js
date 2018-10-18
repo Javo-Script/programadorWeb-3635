@@ -1,9 +1,16 @@
 import { getData } from '../utils/ajax';
+import { genderTranslate, eyeTranslate } from '../utils/translate';
+import { getLocalList, setLocalList } from '../utils/localStorage';
+import { searchPeopleIndexByUrl } from '../utils/search';
 
 function peopleController() {
 	console.log('Se cargo el controller de los personajes');
 
 	getData('https://swapi.co/api/people', showPeople);
+
+	var apiResults = [];
+
+	var localPeople = getLocalList('peopleList');
 
 	var tableBodyNode = $('#tableBody');
 
@@ -15,14 +22,31 @@ function peopleController() {
 		} else {
 			var people = data.results;
 
+			if (data.results) {
+				apiResults = apiResults.concat(data.results);
+				console.log(apiResults);
+			}
+
 			var person;
 
 			for (var i = 0; i < people.length; i++) {
 				person = people[i];
 
+				var localIndex = searchPeopleIndexByUrl(person.url, localPeople);
+
 				var url = person.url;
+
 				url = url.replace('https://swapi.co/api/people/', '');
+
 				var id = url.replace('/', '');
+
+				var addButton;
+
+				if (localIndex == -1) {
+					addButton = '<button id="button' + id + '" type="button" class="btn btn-success">guardar</button>';
+				} else {
+					addButton = '';
+				}
 
 				// TODO: Para terminar las tablas
 				tableBodyNode.append(
@@ -40,8 +64,32 @@ function peopleController() {
 						person.mass +
 						' kg</td><td>' +
 						eyeTranslate('ES', person.eye_color) +
-						'</td><td><button type="button" class="btn btn-success">guardar</button></td></tr>'
+						'</td><td>' +
+						addButton +
+						'</td></tr>'
 				);
+
+				$('#button' + id).click(function() {
+					var button = $(this);
+
+					var buttonId = button.attr('id');
+
+					var id = buttonId.replace('button', '');
+
+					var newUrl = 'https://swapi.co/api/people/' + id + '/';
+
+					var index = searchPeopleIndexByUrl(newUrl, apiResults);
+
+					if (index !== -1) {
+						var personInfo = apiResults[index];
+
+						localPeople.push(personInfo);
+
+						setLocalList('peopleList', localPeople);
+
+						button.remove();
+					}
+				});
 			}
 			if (data.next) {
 				seeMoreButton.one('click', function() {
@@ -52,40 +100,6 @@ function peopleController() {
 			}
 		}
 	}
-}
-
-function genderTranslate(gender) {
-	switch (gender) {
-		case 'male':
-			return 'masculino';
-			break;
-		case 'female':
-			return 'femenino';
-			break;
-		case 'n/a':
-			return 'n/a';
-			break;
-		default:
-			return gender;
-	}
-}
-
-var TRANSLATES = {
-	ES: {
-		blue: 'Azules',
-		yellow: 'Amarillos',
-		red: 'Rojos',
-		'blue-gray': 'Azules grisaceos'
-	},
-	EN: {
-		blue: 'Blue',
-		yellow: 'Yellow',
-		red: 'Red',
-		'blue-gray': 'Blue-Gray'
-	}
-};
-function eyeTranslate(lang, eyeColor) {
-	return TRANSLATES[lang][eyeColor] || eyeColor;
 }
 
 export default peopleController;
